@@ -1,0 +1,70 @@
+<h3>Post詳細</h3>
+<%= link_to "Post一覧に戻る", posts_path %>
+
+<div class="post">
+  <p><%= image_tag @post.image_url, size: "250x200" if @post.image? %></p>
+  spot<p><%= @post.spot %></p>
+  place<p><%= @post.place%></p>
+  time<p><%= @post.time %></p>
+  <p><%= @post.created_at %></p>
+
+    <% if user_signed_in? %>
+      <% if current_user.already_liked?(@post) %>
+        <%= link_to post_like_path(@post), method: :delete do %>
+           <i class="fas fa-heart"></i><%= @post.likes.count %>
+          <% end %>
+      <% else %>
+        <%= link_to post_likes_path(@post), method: :post do %>
+            <i class="far fa-heart"></i><%= @post.likes.count %> 
+        <% end %>
+      <% end %>
+<% else %>
+    <i class="far fa-heart"></i><%= @post.likes.count %>
+ <% end %>
+
+ <% @post.tags.each do |tag| %>
+  <span><%= tag.name %></span>
+<% end %>
+
+
+  <%= link_to "編集する", edit_post_path(@post.id) %>
+</div>
+
+<div id='map'></div>
+            <style>
+            #map {
+              height: 400px;
+              width: 400px;
+            }
+            </style>
+            
+            <!-- js部分 -->
+            <script>
+            //初期マップの設定
+            let map
+            let marker
+            function initMap(){
+              geocoder = new google.maps.Geocoder()
+            
+              map = new google.maps.Map(document.getElementById('map'), {
+                center:  {lat: <%= @post.lat %>, lng: <%= @post.lng %>},
+                zoom: 15,
+              });
+            
+                marker = new google.maps.Marker({
+                position:  {lat: <%= @post.lat %>, lng: <%= @post.lng %>},
+                map: map
+              });
+            }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaUleYVElnyQx6DwTv5eqaRVt32v4EBzc&callback=initMap" async defer></script>
+
+ 
+<h2>いいねしたユーザー</h2>
+<% @post.liked_users.each do |user| %>
+  <li><%= user.user.email %></li>
+<% end %>
+
+
+<%= link_to "Post一覧に戻る", posts_path %>
+

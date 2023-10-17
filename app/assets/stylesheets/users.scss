@@ -1,0 +1,84 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.posts-container{
+    display:flex;
+    width: 100%;
+}
+
+.posts{
+    width: 20%;
+}
+
+.post-mypage{
+    background-color: rgba(130, 119, 119, 0.237);  /*背景色をピンク色に設定*/
+    margin:2em 0;
+    position: relative;
+    padding: 0.5em 1.5em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+}
+.post-mypage:before, .post-mypage:after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: black;
+}
+.post-mypage:before {left: 10px;}
+.post-mypage:after {right: 10px;}
+.post-mypage p {
+    margin: 0; 
+    padding: 0;
+}
+
+.post-archives{
+    background-color: rgba(130, 119, 119, 0.237);  /*背景色をピンク色に設定*/
+    margin:2em 0;
+    position: relative;
+    padding: 0.5em 1.5em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+}
+.post-archives:before, .post-archives:after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: black;
+}
+.post-archives:before {left: 10px;}
+.post-archives:after {right: 10px;}
+.post-archives p {
+    margin: 0; 
+    padding: 0;
+}
+
+.price{
+    background-color: rgba(130, 119, 119, 0.237);  /*背景色をピンク色に設定*/
+    margin:2em 0;
+    position: relative;
+    padding: 0.5em 1.5em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+}
+.price:before, .price:after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: black;
+}
+.price:before {left: 10px;}
+.price:after {right: 10px;}
+.price p {
+    margin: 0; 
+    padding: 0;
+}

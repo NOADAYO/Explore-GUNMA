@@ -1,0 +1,79 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.posts-container{
+    display:flex;
+    width: 100%;
+}
+
+.posts{
+    width: 20%;
+}
+
+.box {
+    background-color: rgba(130, 119, 119, 0.237);  /*背景色をピンク色に設定*/
+    text-align: center;
+    font-size: 20px;
+    margin:2em 0;
+    position: relative;
+    padding: 0.5em 1.5em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+   }
+
+.box:before, .box:after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: black;
+}
+.box:before {left: 10px;}
+.box:after {right: 10px;}
+.box p {
+    margin: 0; 
+    padding: 0;
+    font-size: 15px;
+}
+.post{
+    background-color: rgba(203, 196, 196, 0); 
+    margin: 50px 0; 
+}
+
+
+.zenbu {
+    background-image: url("oyamasan.jpg"); 
+    background-size: cover;
+}
+
+.kensaku{
+    margin-bottom: 10%;
+}
+
+.tagu{
+    background-color: rgba(130, 119, 119, 0.237);  /*背景色をピンク色に設定*/   
+    margin:2em 0;
+    position: relative;
+    padding: 0.5em 1.5em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+}
+.tagu:before, .tagu:after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: black;
+}
+.tagu:before {left: 10px;}
+.tagu:after {right: 10px;}
+.tagu p {
+    margin: 0; 
+    padding: 0;
+}
+

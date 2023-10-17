@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Aosobo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <meta charset="utf-8" />
+    
+  
+    <script src="https://kit.fontawesome.com/b4e860030f.js"  crossorigin="anonymous"></script> 
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Hina+Mincho&display=swap" rel="stylesheet">
+  
+  </head>
+
+  <post>
+
+    <header>
+    <h1>explore gunma</h1>
+    <div class="header-list">
+      <ul>
+        <% if user_signed_in? %>
+        <li><%= button_to 'top page', posts_path%></li>
+        <li><%= button_to 'LOGOUT', destroy_user_session_path, method: :delete, class: "button" %></li>
+        <% else %>
+        <li><%= link_to "新規登録", new_user_registration_path %></li>
+        <li><%= link_to "LOGIN", new_user_session_path %></li>
+      <% end %>
+      </ul>
+    </div>
+    </header>
+    
+    <main>
+      <%= yield %>
+    </main>
+  
+    <footer>
+    <p>Copyright © AOSOBO All Rights Reserved.</p>
+    </footer>
+  
+  </post>
+</html>

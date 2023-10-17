@@ -1,0 +1,42 @@
+<div class="main">
+  <div class= "content-container">
+    <div class="post1">
+        <div class="post-mypage">
+         <h1>My Page</h1>
+          <p>name : <%= @user.name %></p>
+          <p>E-mail : <%= @user.email %></p>
+          <p>Profile : <%= @user.profile %></p>
+          <% if current_user.id == @user.id %>
+          <%= link_to "編集する", edit_user_registration_path %>
+          <% end %>
+        </div> 
+        
+        
+        <div class="post-archives">
+          <h2>Archives</h2>
+            <% @user.posts.each do |t| %>
+              <%= image_tag t.image_url, size: "250x200" if t.image? %>
+              <%= t.user.name %>
+              <%= t.spot %>
+            <% end %>
+        </div>
+
+      
+        <div class="price">
+          <h2>Your Liked</h2>
+            <% @user.liked_posts.each do |t| %>
+              <%= image_tag t.image_url, size: "250x200" if t.image? %>
+              <%= t.user.name %>
+              <%= t.spot %>
+            <% end %>
+          
+        </div>
+        
+    </div>
+  </div>
+</div> 
+
+<%= link_to "トップページrails に戻る", posts_path %>
+
+<%= image_tag @user.image_url, size: "250x200" if @user.image? %>
+
