@@ -11,6 +11,6 @@ Tag.create([
   { name: '前橋' },
   { name: '富岡' },
   { name: '安中' },
-  { name: 'カフェ' }
-  { name: 'レストラン' },
+  { name: 'カフェ' },
+  { name: 'レストラン' }
 ])
