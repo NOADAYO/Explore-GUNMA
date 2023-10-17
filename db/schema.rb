@@ -49,15 +49,6 @@ ActiveRecord::Schema.define(version: 2023_10_17_092421) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "tweet_tag_relations", force: :cascade do |t|
-    t.integer "tweet_id", null: false
-    t.integer "tag_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["tag_id"], name: "index_tweet_tag_relations_on_tag_id"
-    t.index ["tweet_id"], name: "index_tweet_tag_relations_on_tweet_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -77,6 +68,4 @@ ActiveRecord::Schema.define(version: 2023_10_17_092421) do
   add_foreign_key "likes", "users"
   add_foreign_key "post_tag_relations", "posts"
   add_foreign_key "post_tag_relations", "tags"
-  add_foreign_key "tweet_tag_relations", "tags"
-  add_foreign_key "tweet_tag_relations", "tweets"
 end
