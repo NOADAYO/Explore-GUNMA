@@ -12,14 +12,16 @@
 }
 
 .box {
-    background-color: rgba(130, 119, 119, 0.237);  /*背景色をピンク色に設定*/
+    background-color: rgba(130, 119, 119, 0);  /*背景色をピンク色に設定*/
     text-align: center;
     font-size: 20px;
     margin:2em 0;
     position: relative;
-    padding: 0.5em 1.5em;
+    padding: 2em 1.5em;
     border-top: solid 2px black;
     border-bottom: solid 2px black;
+    margin: 80px 0px;
+    
    }
 
 .box:before, .box:after{
@@ -33,33 +35,61 @@
 }
 .box:before {left: 10px;}
 .box:after {right: 10px;}
-.box p {
+.box ul {
     margin: 0; 
     padding: 0;
     font-size: 15px;
+    list-style-type: none;
+    
 }
+
 .post{
     background-color: rgba(203, 196, 196, 0); 
     margin: 50px 0; 
 }
 
+.post {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    background: #f0f7ff00;
+    border: dashed 2px black;/*点線*/
+    font-family: 'Zen Maru Gothic';
+    display: flex;
+    flex-wrap: wrap;
+}
+.yossiisland{
+    width: 250px;
+    margin: 10px;
+    
+}
+.post p {
+    margin: 0; 
+    padding: 0;
+}
 
 .zenbu {
-    background-image: url("oyamasan.jpg"); 
-    background-size: cover;
+    background-color: #e7e7e7;
 }
 
 .kensaku{
     margin-bottom: 10%;
 }
 
+.kensakusuru{
+    margin: 60px;
+    color: rgb(83, 79, 79);
+    text-align: center;
+}
+
 .tagu{
-    background-color: rgba(130, 119, 119, 0.237);  /*背景色をピンク色に設定*/   
-    margin:2em 0;
+    background-color: rgba(130, 119, 119, 0);  /*背景色をピンク色に設定*/   
+    margin:2em 20em;
     position: relative;
-    padding: 0.5em 1.5em;
+    padding: 2em 20em;
     border-top: solid 2px black;
     border-bottom: solid 2px black;
+    width: 200px;
+    text-align: center;
 }
 .tagu:before, .tagu:after{
     content: '';

@@ -1,22 +1,29 @@
 <div class="zenbu">
 <h3>トップページ</h3>
 
+
 <% if user_signed_in? %>
   <%= link_to "MYPAGE", user_path(current_user.id) %>
 <% end %>
 
 <%= link_to "NEW POST", new_post_path %>
-
-<h3>検索する</h3>
-<%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
- <%= text_field_tag :search %>
- <%= submit_tag '検索'  %>
-<% end %>
-
 <div class="box">
-  <h3>about this site<h3>
-  <p>このサイトは群馬を盛り上げるサイトです！<p>
+  <h3>about   Explore GUNMA </h3>
+  <ul>
+  <li>知ってる群馬、</li>
+  <li>知らなかった群馬、</li>
+  <li>素敵な時間を群馬で</li>
+  </ul>
 </div>  
+<div class="kensakusuru">
+  <h3>search</h3>
+  <%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag '🔍' %>
+  <% end %>
+</div>
+
+ 
 
 <div class="tagu">
   <%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
@@ -34,16 +41,17 @@
  </div>
 
 </div>
+<div class="post">
 
   <% @posts.each do |t| %>
-    <div class="post">
+    <div class="yossiisland">
       <%= image_tag t.image_url, size: "250x200" if t.image? %>
         
         
-        <%= t.spot %>
-        <%= t.place %>
-        <%= t.time %>
-        <%= t.setumei %>
+        <%= t.spot %><br>
+        <%= t.place %><br>
+        <%= t.time %><br>
+        <%= t.setsumei %>
         <%= link_to "more", post_path(t.id) %>
         
         
@@ -64,15 +72,14 @@
           <%= link_to "EDIT", edit_post_path(t.id) %>
           <%= button_to "DELITE", post_path(t.id), method: :delete %>
         <% end %>
-      <% end %>
+      
     </div>
-  
+  <% end %>
 </div>
 
 
 
             <div id='map'></div>
-            </div>
             <style>
             #map {
               height: 600px;
@@ -115,7 +122,7 @@
             //マーカーをクリックしたとき、詳細情報を表示
                       let infowindow = new google.maps.InfoWindow({
                         position: markerLatLng,
-                        content: "<a href='<%= post_url(post.id) %>' target='_blank'><%= post.spot %></a>"
+                        content: "<%= link_to post.spot, post_path(post.id) %>"
                       }); //ここで詳細ページへのリンクを表示させる
                       marker.addListener('click', function() {
                         infowindow.open(map, marker);
@@ -126,6 +133,5 @@
                   //複数マーカー ここまで  
               }
             </script>
-            
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaUleYVElnyQx6DwTv5eqaRVt32v4EBzc&callback=initMap" async defer></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWyR-wAsB6NNqUZ587gMw7UbX7V3d_G40&callback=initMap" async defer></script>
  

@@ -15,9 +15,23 @@
   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Hina+Mincho&family=Rampart+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Hina+Mincho&display=swap" rel="stylesheet">
-  
-  </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Hina+Mincho&family=Rampart+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Hina+Mincho&family=Rampart+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Hina+Mincho&family=Mochiy+Pop+P+One&family=Rampart+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300&display=swap" rel="stylesheet">
+    </head>
 
   <post>
 
@@ -26,7 +40,7 @@
     <div class="header-list">
       <ul>
         <% if user_signed_in? %>
-        <li><%= button_to 'top page', posts_path%></li>
+        <li><%= link_to 'top page', posts_path%></li>
         <li><%= button_to 'LOGOUT', destroy_user_session_path, method: :delete, class: "button" %></li>
         <% else %>
         <li><%= link_to "新規登録", new_user_registration_path %></li>
@@ -35,13 +49,13 @@
       </ul>
     </div>
     </header>
-    
+    <div class="first=v"></div>    
     <main>
       <%= yield %>
     </main>
   
     <footer>
-    <p>Copyright © AOSOBO All Rights Reserved.</p>
+    <p>Copyright © geeksalon All Rights Reserved.</p>
     </footer>
   
   </post>

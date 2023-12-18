@@ -12,7 +12,7 @@
     margin-bottom: 50px;
   }
   input[type="text"] {
-    width: 75%;
+    width: 300px;
     height: 40px;
   }
   .newsubmit input[type="submit"] {
@@ -20,11 +20,83 @@
     font-size: 20px;
     margin-top: 50px;
     margin-bottom: 30px;
+    background-color: transparent;
+    border: none;
   }
   
   .form-group
   {
     width: 300px;
-    background-color: #c7c9ca
-    
+    background-color: #ffffff37
   }
+  
+  .form-group{
+    margin:17px auto ;
+    position: relative;
+    padding: 0.5em 1.5em;
+    border-top: solid 2px rgb(78, 77, 77);
+    border-bottom: solid 2px rgb(78, 76, 76);
+    text-align: center;
+}
+.form-group:before, .form-group:after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: black;
+}
+.form-group:before {left: 10px;}
+.form-group:after {right: 10px;}
+.form-group p {
+    margin: 0; 
+    padding: 0;
+}
+
+
+
+.newpostsyousai{
+    padding: 2em 1em;
+    margin: 80px 300px;
+    color: #292929;
+    background: rgba(255, 255, 255, 0);
+    border-top: solid 5px #d4d9ef;
+    box-shadow: 0 3px 5px rgba(207, 221, 236, 0.995);
+   text-align: center; 
+}
+.newpostsyousai p {
+    margin: 0; 
+    padding: 0;
+}
+
+
+
+.newhaikei{
+  background-image: url("yubatake.png");
+  background-size: cover;
+  color: white;
+}
+
+.mapall
+{
+  margin: 0 400px
+}
+.koumoku{
+  text-align: justify;
+  text-align-last: justify;
+  width: 400px;
+  margin: 0 auto;
+}
+.newpostmoji{
+  text-align: center;
+  text-decoration: none;
+}
+
+.field input[type="text"]{
+  text-align: left;
+}
+
+h1{
+  font-size: 50px;
+}

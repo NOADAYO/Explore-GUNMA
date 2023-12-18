@@ -28,15 +28,19 @@ body {
   flex-direction: column;
 }
 header {
-  background-color: #ccc6c600;
-  height: 80px;
+  background-image: url("heddagunma2.jpg");
+  background-size: contain;
+  background-repeat: repeat;
+  height: 200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+
 }
+
 header a {
-  color: rgb(1, 0, 0); 
+  color: #ed8c72(1, 0, 0); 
   text-decoration: none; 
 }
 header h1 {
@@ -53,10 +57,12 @@ header li {
   margin: 20px;
 
 }
+
+
 footer {
-  color: black;
+  color: rgb(245, 241, 241);
   height: 30px;
-  background-color: #D9D9D9;
+  background-color: #2f496e;
   bottom: 0;
   width: 100%;
   display: flex;

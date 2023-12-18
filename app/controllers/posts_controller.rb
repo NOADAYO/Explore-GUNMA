@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-    before_action :authenticate_user!, only: [:new, :create, :index]
+    before_action :authenticate_user!, only: [:new, :create]
     def index
       @posts = Post.all
       if params[:search] == nil
@@ -74,7 +74,7 @@ class PostsController < ApplicationController
     private
 
     def post_params
-      params.require(:post).permit(:spot, :place, :time, :image, :body, :lat, :lng, tag_ids: [])
+      params.require(:post).permit(:spot, :place, :time, :setsumei, :image, :body, :lat, :lng, tag_ids: [])
     end
 end
 

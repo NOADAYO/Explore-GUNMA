@@ -3,11 +3,13 @@
 
 <div class="post">
   <p><%= image_tag @post.image_url, size: "250x200" if @post.image? %></p>
-  spot<p><%= @post.spot %></p>
-  place<p><%= @post.place%></p>
-  time<p><%= @post.time %></p>
-  <p><%= @post.created_at %></p>
-
+  <ul>
+    <li>spot<p><%= @post.spot %></p>
+    <li>place<p><%= @post.place%></p>
+    <li>time<p><%= @post.time %></p>
+    <li>説明<p><%= @post.setsumei %></p>
+    <p><%= @post.created_at %></p>
+  </ul>
     <% if user_signed_in? %>
       <% if current_user.already_liked?(@post) %>
         <%= link_to post_like_path(@post), method: :delete do %>
